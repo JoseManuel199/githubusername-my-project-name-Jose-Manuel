@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excuse Generator</title>
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+
+        function getRandomExcuse() {
+            const phrases = [
+                "It was an act of God.",
+                "My cat ate my keyboard.",
+                "There was a solar eclipse.",
+                "The Earth was attacked by space aliens.",
+                "My car was hit by a meteorite.",
+                "My house was destroyed by a fire.",
+                "The Earth experienced a magnetic pole shift.",
+                "My pet monkey ran away with my computer.",
+                "My phone line was disconnected due to construction in the area.",
+                "My internet connection was temporarily down."
+            ];
+
+            const index = getRandomInt(phrases.length);
+            return phrases[index];
+        }
+
+        function generateExcuse() {
+            const excuse = getRandomExcuse();
+            document.getElementById("excuse").innerText = excuse;
+        }
+    </script>
+</head>
+<body>
+    <h1>Excuse Generator</h1>
+    <p id="excuse"></p>
+    <button onclick="generateExcuse()">Generate Excuse</button>
+</body>
+</html>
